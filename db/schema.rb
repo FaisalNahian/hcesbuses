@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130220025237) do
+ActiveRecord::Schema.define(:version => 20130220033316) do
 
   create_table "buses", :force => true do |t|
     t.string   "name"
@@ -19,6 +19,23 @@ ActiveRecord::Schema.define(:version => 20130220025237) do
     t.integer  "last_tweet",    :default => 0
     t.datetime "created_at",                   :null => false
     t.datetime "updated_at",                   :null => false
+  end
+
+  create_table "mobile_phones", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "carrier"
+    t.string   "number"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "trackers", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "bus_id"
+    t.integer  "track"
+    t.boolean  "active"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "users", :force => true do |t|
