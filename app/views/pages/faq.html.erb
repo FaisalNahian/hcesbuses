@@ -1,0 +1,49 @@
+<h1>Frequently Asked Questions</h1>
+
+<dl>
+  <dt>How Does This Work?</dt>
+  <dd>
+    <p>Someone (a very nice person) at Harris Creek maintains a Twitter account (<a href="https://twitter.com/HCESBuses">@HCESBuses</a>), on which they post the status of buses that leave the school each afternoon. Often it's a report like "Red Bus left at 3:59", or a status update like "Yellow bus will be coming back to pick up Orange Bus kids"</p>
+    <p>This program scans the Twitter account, looks for mentions of the various bus names, and if it sees a bus that it knows, it will see if anyone is watching for that bus and send them a text with what the tweet says.</p>
+    </dd>
+    
+    <dt>What about Track-Out? I don't want to get texts while my kid is tracked out.</dt>
+    <dd>
+      <p>I have put the 2012-2013 HCES schedule into the program, and when you select which bus to watch, you pick which track your child is on.  During your track-out time, you won't get notified.</p>
+    </dd>
+    
+    <dt>We're going on vacation while school is in session - can I temporarily turn off texts?</dt>
+    <dd>
+      <p>Yes! Just edit the bus tracker(s), uncheck the "Active" checkbox, and save. Just remember to turn it back on when you get back!</p>
+    </dd>
+    
+    <dt>Why didn't I get a text today? I was waiting and waiting but it never showed up, and I missed the bus!</dt>
+    <dd>
+      <p>There are several reasons that this might have happened:
+        <ul>
+          <li>The person who updates the Twitter feed wasn't updating it that day.</li>
+          <li>The twitter feed had a typo in it, so I couldn't match the bus name ("Yellaw Bus")</li>
+          <li>Something went wrong sending the text.</li>
+          <li>They actually <em>are</em> updating the Twitter feed, your bus is just really, really late. (This is far too common).</li>
+        </ul>
+      </p>
+      <p>Or, it's possible that something broke with my program.</p>
+      <p>In general though, use common sense and don't rely on this being 100% accurate. It's just there to help.</p>
+    </dd>
+    
+    <dt>The texts seem kinda funny-looking</dt>
+    <dd>
+      <p>Not surprising - I make use of systems that the phone companies run which allow me to send an email, which then gets turned into a text. It's not a great system, but it's free (vs. paying 1c a text for a "real" texting solution)</p>
+      <p>It's also the reason why you have to provide your cell phone carrier when you set the phone up - it helps build the magic email addresses.</p>
+    </dd>
+    
+    <dt>I'd like to help make this better!</dt>
+    <dd>
+      <p>Great! This site is a Ruby on Rails application, and the code is publicly available on Github. If you're a Ruby programmer or HTML designer and want to help work on it, submit a pull request there!</p>
+    </dd>
+    
+    <dt>Who are you?</dt>
+    <dd>
+      <p>Wade Minter, Director of Engineering at <a href="http://teamsnap.com/">TeamSnap</a> and HCES Dad. You can get in touch with me via the <%= link_to "Contact Page", pages_contact_path %>.</p>
+    </dd>
+</dl>
