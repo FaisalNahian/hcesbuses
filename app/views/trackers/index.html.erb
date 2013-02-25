@@ -3,6 +3,7 @@
 <table>
   <tr>
     <th>User</th>
+    <th>Phone Numbers</th>
     <th>Bus</th>
     <th>Track</th>
     <th>Active?</th>
@@ -12,9 +13,10 @@
 <% @trackers.each do |tracker| %>
   <tr>
     <td><%= tracker.user %></td>
+    <td><%= format_phones(tracker.user.mobile_phones) %></td>
     <td><%= tracker.bus %></td>
     <td><%= tracker.track %></td>
-    <td><%= tracker.active %></td>
+    <td><%= yes_no(tracker.active) %></td>
     <td><%= link_to 'Show', tracker %>
       <%= link_to 'Edit', edit_tracker_path(tracker) %>
       <%= link_to 'Destroy', tracker, method: :delete, data: { confirm: 'Are you sure?' } %></td>

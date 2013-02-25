@@ -1,7 +1,7 @@
 class Track
   
   def self.in_session_now
-    # 2012-2013 track schedule
+    # Winter/Spring/Summer 2013 track schedule
     tracks = {
       1 => [
         ['2013-01-02', '2013-03-01'],

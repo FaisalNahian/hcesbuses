@@ -3,6 +3,9 @@ class Bus < ActiveRecord::Base
   
   has_many :trackers
   
+  validates :last_tweet, :name, :twitter_regex, :presence => true
+  validates :last_tweet, :numericality => true
+  
   def to_s
     name
   end
