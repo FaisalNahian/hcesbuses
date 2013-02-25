@@ -45,6 +45,7 @@ gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootst
 gem 'sms_fu', :git => "git://github.com/teamsnap/sms-fu.git", :branch => "rails3.1"
 gem 'pony'
 gem 'twitter'
+gem 'exception_notification'
 
 group :development do
   gem 'crack'
