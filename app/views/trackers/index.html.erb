@@ -1,29 +1,33 @@
-<h1>Listing trackers</h1>
+<h1>Listing Bus Trackers</h1>
 
-<table>
-  <tr>
-    <th>User</th>
-    <th>Phone Numbers</th>
-    <th>Bus</th>
-    <th>Track</th>
-    <th>Active?</th>
-    <th>Actions</th>
-  </tr>
+<table class="table">
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Phone Numbers</th>
+      <th>Bus</th>
+      <th>Track</th>
+      <th>Active?</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
 
 <% @trackers.each do |tracker| %>
-  <tr>
-    <td><%= tracker.user %></td>
-    <td><%= format_phones(tracker.user.mobile_phones) %></td>
-    <td><%= tracker.bus %></td>
-    <td><%= tracker.track %></td>
-    <td><%= yes_no(tracker.active) %></td>
-    <td><%= link_to 'Show', tracker %>
-      <%= link_to 'Edit', edit_tracker_path(tracker) %>
-      <%= link_to 'Destroy', tracker, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+    <tr>
+      <td><%= tracker.user %></td>
+      <td><%= format_phones(tracker.user.mobile_phones) %></td>
+      <td><%= tracker.bus %></td>
+      <td><%= tracker.track %></td>
+      <td><%= yes_no(tracker.active) %></td>
+      <td><%= link_to 'Show', tracker %>
+        <%= link_to 'Edit', edit_tracker_path(tracker) %>
+        <%= link_to 'Destroy', tracker, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
 <% end %>
+  </tbody>
 </table>
 
 <br />
 
-<%= link_to 'New Tracker', new_tracker_path %>
+<%= link_to 'New Bus Tracker', new_tracker_path %>
