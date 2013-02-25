@@ -1,3 +1,5 @@
+<h1>Details About This Tracker</h1>
+
 <p>
   <b>User:</b>
   <%= @tracker.user %>
@@ -19,5 +21,4 @@
 </p>
 
 
-<%= link_to 'Edit', edit_tracker_path(@tracker) %> |
-<%= link_to 'Back', trackers_path %>
+<%= link_to 'Edit', edit_tracker_path(@tracker), :class => 'btn btn-medium btn-info' %> <%= link_to 'Back', trackers_path, :class => 'btn btn-medium btn-default' %>

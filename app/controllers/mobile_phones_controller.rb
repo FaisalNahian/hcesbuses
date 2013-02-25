@@ -47,7 +47,7 @@ class MobilePhonesController < ApplicationController
 
     respond_to do |format|
       if @mobile_phone.save
-        format.html { redirect_to @mobile_phone, notice: 'Mobile phone was successfully created.' }
+        format.html { redirect_to mobile_phones_url, notice: 'Mobile phone was successfully created.' }
         format.json { render json: @mobile_phone, status: :created, location: @mobile_phone }
       else
         format.html { render action: "new" }
@@ -64,7 +64,7 @@ class MobilePhonesController < ApplicationController
 
     respond_to do |format|
       if @mobile_phone.update_attributes(params[:mobile_phone])
-        format.html { redirect_to @mobile_phone, notice: 'Mobile phone was successfully updated.' }
+        format.html { redirect_to mobile_phones_url, notice: 'Mobile phone was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

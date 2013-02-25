@@ -1,3 +1,5 @@
+<h1>Details About This Mobile Phone</h1>
+
 <p>
   <b>Label:</b>
   <%= @mobile_phone.label %>
@@ -14,5 +16,4 @@
 </p>
 
 
-<%= link_to 'Edit', edit_mobile_phone_path(@mobile_phone) %> |
-<%= link_to 'Back', mobile_phones_path %>
+<%= link_to 'Edit', edit_mobile_phone_path(@mobile_phone), :class => 'btn btn-medium btn-info' %> <%= link_to 'Back', mobile_phones_path, :class => 'btn btn-medium btn-default' %>

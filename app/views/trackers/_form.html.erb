@@ -14,16 +14,16 @@
   <div class="field">
     <%= f.label :bus_id, "Select Your Bus" %><br />
     <%= f.select :bus_id, options_from_collection_for_select(Bus.order('name asc').all, 'id', 'name'), :include_blank => true %>
-    <span class="help-block">Both Lucas buses are grouped together, because the Twitter account isn't consistent about listing Lucas 1 and Lucas 2 separately.</span>
+    <span class="help-block"><em>Both Lucas buses are grouped together, because the Twitter account isn't consistent about listing Lucas 1 and Lucas 2 separately.</em></span>
   </div>
   <div class="field">
     <%= f.label :track, "Select Your Track" %><br />
-    <%= f.select :track,  options_for_select([['Track 1', 1], ['Track 2', 2], ['Track 3', 3], ['Track 4', 4]])%>
+    <%= f.select :track,  options_for_select([[nil,nil],['Track 1', 1], ['Track 2', 2], ['Track 3', 3], ['Track 4', 4]])%>
   </div>
   <div class="field">
     <%= f.check_box :active %> <%= f.label :active, "Is this tracker active?" %>    
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit nil, :class => "btn btn-large btn-success" %>
   </div>
 <% end %>

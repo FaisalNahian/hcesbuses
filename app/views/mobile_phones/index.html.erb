@@ -1,5 +1,14 @@
+<% if current_user.mobile_phones.count > 0 && current_user.trackers.count == 0 %>
+<div class="hero-unit">
+  <h3>Set Up A Tracker?</h3>
+  <p>You're not currently tracking any buses - press the button below to set one up!</p>
+  <%= link_to "Set Up A Bus Tracker", new_tracker_path, :class => "btn btn-large btn-primary"%>
+</div>
+<% end %>
+
 <h1>Your Current Mobile Phones</h1>
 
+<% if current_user.mobile_phones.count > 0 %>
 <table class="table">
   <thead>
     <tr>
@@ -22,7 +31,19 @@
 <% end %>
   </tbody>
 </table>
-
 <br />
 
 <%= link_to 'Create New Mobile Phone', new_mobile_phone_path, :class => 'btn btn-large btn-success' %>
+
+<% else %>
+<div class="hero-unit">
+  <h3>Oh Snap!</h3>
+<p>You don't have any cell phones defined yet. It will be very hard to send you texts with no cell phones. Just press the green button down there and enter one or more phone numbers!</p>
+<br />
+
+<%= link_to 'Create New Mobile Phone', new_mobile_phone_path, :class => 'btn btn-large btn-success' %>
+
+</div>
+<% end %>
+
+
