@@ -18,4 +18,6 @@ buses = Bus.create([
   {name: 'Orange Bus', twitter_regex: (/orange/i).to_s},
   {name: 'Lucas Bus (both)', twitter_regex: (/lucas/i).to_s},
   {name: "Kid's Ed Bus", twitter_regex: (/kid'?s/i).to_s}
+  {name: "ICC Bus", twitter_regex: (/icc/i).to_s}
+  {name: "Skate Ranch Bus", twitter_regex: (/skate/i).to_s}
   ])
