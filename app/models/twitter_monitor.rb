@@ -18,7 +18,7 @@ class TwitterMonitor
   
   def self.send_notifications(bus, tweet)
     # Find active monitors on this bus
-    Tracker.where(:track => Track.in_session_now, :bus_id => bus.id).each do |tracker|
+    Tracker.active.where(:track => Track.in_session_now, :bus_id => bus.id).each do |tracker|
       print "Sending notification about bus #{bus} to user #{tracker.user}.  Tweet text: #{tweet.text}\n"
     end
   end
