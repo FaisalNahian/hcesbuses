@@ -44,3 +44,9 @@ gem 'omniauth-twitter'
 gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 gem 'sms_fu'
 gem 'pony'
+gem 'twitter'
+
+group :development do
+  gem 'crack'
+  gem 'awesome_print'
+end
