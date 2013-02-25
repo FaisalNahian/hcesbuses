@@ -38,9 +38,11 @@
           <a class="brand" href="#">HCES Buses</a>
           <div class="nav-collapse collapse">
             <ul class="nav">
-              <li class="active"><a href="#">Home</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="#contact">Contact</a></li>
+              <% if user_signed_in? %>
+                <li><%= link_to "Your Cell Phones", mobile_phones_path %></li>
+                <li><%= link_to "Your Buses", trackers_path %></li>
+              <% end %>
+              <li><%= link_to "Contact", pages_contact_path %></li>
               <% if user_signed_in? %>
                 <li><%= link_to "Logout", destroy_user_session_path, :method => :delete %></li>
               <% else %>
@@ -83,7 +85,7 @@
     
     <footer>  
       <hr />
-    <p>© 2013, H. Wade Minter. Not affiliated with or endorsed by the Wake County Public School System or Harris Creek Elementary School</p>  
+    <p>© 2013, <%= link_to "H. Wade Minter", pages_contact_path %>. Not affiliated with or endorsed by the <a href="http://www.wcpss.net/">Wake County Public School System</a> or <a href="http://harriscreekes.weebly.com/">Harris Creek Elementary School</a>.</p>  
     </footer>  
     
   </body>

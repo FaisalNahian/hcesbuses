@@ -1,22 +1,17 @@
 <div class="leaderboard">  
 <h1>Don't Miss The Bus!</h1>  
 <p>Would you like to get a text when your child's bus has left Harris Creek Elementary School in the afternoon? Would you like to know if the bus has been delayed, or left early? This app monitors the <a href="https://twitter.com/hcesbuses">@HCESBuses</a> Twitter account, and will text you when it sees something about your bus!</p>  
-<p><a class="btn btn-success btn-large">Sign Up Now!</a></p>  
+<p><%= link_to "Sign Up Now!", new_user_registration_path, :class => "btn btn-success btn-large"%></p>  
 </div>  
   
 <div class="row">  
-<div class="span4">  
-<h2>HTML5 and JS Apps</h2>  
-<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh,ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>  
-<p><a class="btn btn-success btn-large" href="#">View apps</a></p>  
+<div class="span6">  
+<h2>What Is This?</h2>  
+<p>The folks at HCES are nice enough to maintain a Twitter feed listing when buses depart from the school in the afternoons.  This application watches that twitter feed and, if it sees information about one of your buses, will SMS you the content of the tweet. So you can know if your bus is leaving, and when.</p>  
+<p><%= link_to "Find Out More", pages_faq_path, :class => "btn btn-success btn-large" %></p>  
 </div>  
-<div class="span4">  
-<h2>Ruby Apps</h2>  
-<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh,ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>  
-<p><a class="btn btn-success btn-large" href="#">View apps</a></p>  
-</div>  
-<div class="span4">  
-<h2>PHP MySQL Apps</h2>  
-<p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>  
-<p><a class="btn btn-success btn-large" href="#">View apps</a></p>  
+<div class="span6">  
+<h2>Who Made It?</h2>  
+<p>This application was made by Wade Minter, a HCES parent and computer nerd.  It's made life easier for him and his neighbors, so he figured he'd share it with other HCES families.</p>  
+<p><%= link_to "Contact Us", pages_contact_path, :class => "btn btn-success btn-large" %></p>  
 </div>  

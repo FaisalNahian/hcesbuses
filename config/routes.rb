@@ -3,6 +3,8 @@ Hcesbuses::Application.routes.draw do
   resources :trackers
 
   match 'pages/index' => 'pages#index'
+  match 'pages/contact' => 'pages#contact'
+  match 'pages/faq' => 'pages#faq'
   
   devise_for :users
 
