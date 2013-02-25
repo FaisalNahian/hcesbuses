@@ -4,7 +4,7 @@
 
 <p>You can confirm your account email through the link below:</p>
 
-<p><%= link_to 'Confirm my account', user_confirmation_url(@resource, :confirmation_token => @resource.confirmation_token) %></p>
+<p><%= link_to 'Confirm my account', confirmation_url(@resource, :confirmation_token => @resource.confirmation_token) %></p>
 
 <p>If you don't know why you're receiving this email, you can ignore it, or reply back and we'll try to figure out out.</p>
 
