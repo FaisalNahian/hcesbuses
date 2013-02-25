@@ -10,8 +10,8 @@ class User < ActiveRecord::Base
   attr_accessible :provider, :uid
   # attr_accessible :title, :body
   
-  has_many :trackers
-  has_many :mobile_phones
+  has_many :trackers, :dependent => :destroy
+  has_many :mobile_phones, :dependent => :destroy
   
   def to_s
     email
