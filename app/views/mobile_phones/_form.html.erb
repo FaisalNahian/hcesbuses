@@ -10,6 +10,20 @@
       </ul>
     </div>
   <% end %>
+  
+  <div class="field">
+    <%= f.label :carrier, "Choose Your Phone Carrier" %><br />
+    <%= carrier_select 'mobile_phone[carrier]' %>
+  </div>
+  <div class="field">
+    <%= f.label :number, "Your 9-digit phone number (eg., 9195551212)" %><br />
+    <%= f.text_field :number %>
+  </div>
+  <div class="field">
+    <%= f.label :label, "Optional label for this number (eg, Mom's Cell, Bob's phone)"%><br />
+    <%= f.text_field :label %>
+  </div>
+  
 
   <div class="actions">
     <%= f.submit %>

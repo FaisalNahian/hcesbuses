@@ -7,6 +7,13 @@ GIT
       execjs
       railties (>= 3.1)
 
+GIT
+  remote: git://github.com/teamsnap/sms-fu.git
+  revision: af6e50bc1f259bb1a4fb10b6e3deb93a9b80cdc9
+  branch: rails3.1
+  specs:
+    sms_fu (1.1.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -149,7 +156,6 @@ GEM
       sass (>= 3.1.10)
       tilt (~> 1.3)
     simple_oauth (0.2.0)
-    sms_fu (1.1.2)
     sprockets (2.2.2)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -191,7 +197,7 @@ DEPENDENCIES
   pony
   rails (= 3.2.12)
   sass-rails (~> 3.2.3)
-  sms_fu
+  sms_fu!
   sqlite3
   therubyracer
   twitter

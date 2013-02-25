@@ -1,6 +1,7 @@
 class TrackersController < ApplicationController
   
   before_filter :authenticate_user!
+  before_filter :check_for_mobile_phone
   
   # GET /trackers
   # GET /trackers.json
@@ -83,6 +84,15 @@ class TrackersController < ApplicationController
     respond_to do |format|
       format.html { redirect_to trackers_url }
       format.json { head :no_content }
+    end
+  end
+  
+  private
+  
+  def check_for_mobile_phone
+    if current_user.mobile_phones.empty?
+      flash[:notice] = "You can't track any buses without a cell phone - go ahead and enter one now!"
+      redirect_to new_mobile_phones_path and return
     end
   end
 end

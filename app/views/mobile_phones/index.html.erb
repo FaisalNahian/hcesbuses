@@ -1,21 +1,25 @@
-<h1>Listing mobile_phones</h1>
+<h1>Your Current Mobile Phones</h1>
 
 <table>
   <tr>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th>Label</th>
+    <th>Number</th>
+    <th>Carrier</th>
+    <th>Actions</th>
   </tr>
 
 <% @mobile_phones.each do |mobile_phone| %>
   <tr>
-    <td><%= link_to 'Show', mobile_phone %></td>
-    <td><%= link_to 'Edit', edit_mobile_phone_path(mobile_phone) %></td>
-    <td><%= link_to 'Destroy', mobile_phone, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= mobile_phone.label %></td>
+    <td><%= number_to_phone(mobile_phone.number) %></td>
+    <td><%= SMSFu.carrier_name(mobile_phone.carrier) %></td>
+    <td><%= link_to 'Show', mobile_phone %>
+    <%= link_to 'Edit', edit_mobile_phone_path(mobile_phone) %>
+    <%= link_to 'Destroy', mobile_phone, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Mobile phone', new_mobile_phone_path %>
+<%= link_to 'Create New Mobile Phone', new_mobile_phone_path %>

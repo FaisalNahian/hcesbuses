@@ -1,8 +1,10 @@
 class MobilePhonesController < ApplicationController
+  before_filter :authenticate_user!
+  
   # GET /mobile_phones
   # GET /mobile_phones.json
   def index
-    @mobile_phones = MobilePhone.all
+    @mobile_phones = MobilePhone.where(:user_id => current_user).all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -13,7 +15,7 @@ class MobilePhonesController < ApplicationController
   # GET /mobile_phones/1
   # GET /mobile_phones/1.json
   def show
-    @mobile_phone = MobilePhone.find(params[:id])
+    @mobile_phone = MobilePhone.where(:user_id => current_user).find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -34,13 +36,14 @@ class MobilePhonesController < ApplicationController
 
   # GET /mobile_phones/1/edit
   def edit
-    @mobile_phone = MobilePhone.find(params[:id])
+    @mobile_phone = MobilePhone.where(:user_id => current_user).find(params[:id])
   end
 
   # POST /mobile_phones
   # POST /mobile_phones.json
   def create
     @mobile_phone = MobilePhone.new(params[:mobile_phone])
+    @mobile_phone.user = current_user
 
     respond_to do |format|
       if @mobile_phone.save
@@ -57,6 +60,7 @@ class MobilePhonesController < ApplicationController
   # PUT /mobile_phones/1.json
   def update
     @mobile_phone = MobilePhone.find(params[:id])
+    @mobile_phone.user = current_user
 
     respond_to do |format|
       if @mobile_phone.update_attributes(params[:mobile_phone])
@@ -72,7 +76,7 @@ class MobilePhonesController < ApplicationController
   # DELETE /mobile_phones/1
   # DELETE /mobile_phones/1.json
   def destroy
-    @mobile_phone = MobilePhone.find(params[:id])
+    @mobile_phone = MobilePhone.where(:user_id => current_user).find(params[:id])
     @mobile_phone.destroy
 
     respond_to do |format|
