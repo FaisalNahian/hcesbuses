@@ -12,4 +12,9 @@ class User < ActiveRecord::Base
   
   has_many :trackers
   has_many :mobile_phones
+  
+  def to_s
+    email
+  end
+  
 end

@@ -1,4 +1,7 @@
 class TrackersController < ApplicationController
+  
+  before_filter :authenticate_user!
+  
   # GET /trackers
   # GET /trackers.json
   def index
@@ -24,7 +27,7 @@ class TrackersController < ApplicationController
   # GET /trackers/new
   # GET /trackers/new.json
   def new
-    @tracker = Tracker.new
+    @tracker = Tracker.new(:active => true)
 
     respond_to do |format|
       format.html # new.html.erb
@@ -41,6 +44,7 @@ class TrackersController < ApplicationController
   # POST /trackers.json
   def create
     @tracker = Tracker.new(params[:tracker])
+    @tracker.user = current_user
 
     respond_to do |format|
       if @tracker.save
@@ -57,6 +61,7 @@ class TrackersController < ApplicationController
   # PUT /trackers/1.json
   def update
     @tracker = Tracker.find(params[:id])
+    @tracker.user = current_user
 
     respond_to do |format|
       if @tracker.update_attributes(params[:tracker])
