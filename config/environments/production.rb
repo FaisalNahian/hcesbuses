@@ -70,8 +70,6 @@ Hcesbuses::Application.configure do
     :sender_address => %{info@hcesbuses.com},
     :exception_recipients => %w{minter@lunenburg.org}
     
-  config.action_mailer.default_url_options = { :host => 'hcesbuses.com' }
-  config.mailer_sender = %w{info@hcesbuses.com}
-  
+  config.action_mailer.default_url_options = { :host => 'hcesbuses.com' }  
   
 end
