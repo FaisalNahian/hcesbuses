@@ -1,10 +1,9 @@
 Hcesbuses::Application.routes.draw do
   resources :mobile_phones
-
-
   resources :trackers
 
-
+  match 'pages/index' => 'pages#index'
+  
   devise_for :users
 
   # The priority is based upon order of creation:
