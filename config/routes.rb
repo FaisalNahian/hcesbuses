@@ -1,4 +1,7 @@
 Hcesbuses::Application.routes.draw do
+  resources :mobile_phones
+
+
   resources :trackers
 
 
