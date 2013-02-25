@@ -1,6 +1,5 @@
 set :normal_symlinks, %w(
   database.yml
-  pony.yml
   twitter.yml
 )
 

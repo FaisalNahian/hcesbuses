@@ -17,7 +17,7 @@ class TwitterMonitor
   end
   
   def self.send_notifications(bus, tweet)
-    sms_fu = SMSFu::Client.configure(:delivery => :pony, :pony_config => PONY_CONFIG)
+    sms_fu = SMSFu::Client.configure(:delivery => :pony, :pony_config => { :via => :sendmail })
     # Find active monitors on this bus
     Tracker.active.where(:track => Track.in_session_now, :bus_id => bus.id).each do |tracker|
       print "Sending notification about bus #{bus} to user #{tracker.user}.  Tweet text: #{tweet.text}\n"

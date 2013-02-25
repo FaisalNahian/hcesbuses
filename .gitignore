@@ -15,6 +15,5 @@
 /tmp
 
 config/database.yml
-config/pony.yml
 config/twitter.yml
 
