@@ -41,6 +41,19 @@
               <li class="active"><a href="#">Home</a></li>
               <li><a href="#about">About</a></li>
               <li><a href="#contact">Contact</a></li>
+              <% if user_signed_in? %>
+                <li><%= link_to "Logout", destroy_user_session_path, :method => :delete %></li>
+              <% else %>
+              <li>
+                <%= form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {:class => 'navbar-form form-inline pull-right'}) do |f| %>
+                  <%= f.email_field :email, :autofocus => true, :placeholder => "Email Address" %>
+                  <%= f.password_field :password, :placeholder => "Password" %>
+                  <%= f.hidden_field :remember_me, :value => 1 %>
+                  <%= f.submit "Log In", :class => 'btn' %>
+                <% end %>
+              </li>
+              <% end %>
+              </li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
@@ -69,6 +82,7 @@
     <%= javascript_include_tag "application" %>
     
     <footer>  
+      <hr />
     <p>© 2013, H. Wade Minter. Not affiliated with or endorsed by the Wake County Public School System or Harris Creek Elementary School</p>  
     </footer>  
     
