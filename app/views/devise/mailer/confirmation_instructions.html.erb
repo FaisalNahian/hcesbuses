@@ -1,5 +1,11 @@
-<p>Welcome <%= @email %>!</p>
+<p>Hello, <%= @email %>!</p>
+
+<p>You are receiving this email because you (hopefully it was you) signed up at HCESBuses.com to receive texts about your child's school bus.  Because we don't want to start texting people against their will, you will need to confirm that you did, in fact, mean to sign up for this service.</p>
 
 <p>You can confirm your account email through the link below:</p>
 
 <p><%= link_to 'Confirm my account', user_confirmation_url(@resource, :confirmation_token => @resource.confirmation_token) %></p>
+
+<p>If you don't know why you're receiving this email, you can ignore it, or reply back and we'll try to figure out out.</p>
+
+<p>Thanks, Wade Minter</p>

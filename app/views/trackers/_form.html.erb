@@ -14,6 +14,7 @@
   <div class="field">
     <%= f.label :bus_id, "Select Your Bus" %><br />
     <%= f.select :bus_id, options_from_collection_for_select(Bus.order('name asc').all, 'id', 'name'), :include_blank => true %>
+    <span class="help-block">Both Lucas buses are grouped together, because the Twitter account isn't consistent about listing Lucas 1 and Lucas 2 separately.</span>
   </div>
   <div class="field">
     <%= f.label :track, "Select Your Track" %><br />

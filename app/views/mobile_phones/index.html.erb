@@ -15,9 +15,9 @@
       <td><%= mobile_phone.label %></td>
       <td><%= number_to_phone(mobile_phone.number) %></td>
       <td><%= SMSFu.carrier_name(mobile_phone.carrier) %></td>
-      <td><%= link_to 'Show', mobile_phone %>
+      <td><%= link_to 'Details', mobile_phone %>
       <%= link_to 'Edit', edit_mobile_phone_path(mobile_phone) %>
-      <%= link_to 'Destroy', mobile_phone, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <%= link_to 'Delete', mobile_phone, method: :delete, data: { confirm: "Are you sure? You won't get any more texts to this phone." } %></td>
     </tr>
 <% end %>
   </tbody>
@@ -25,4 +25,4 @@
 
 <br />
 
-<%= link_to 'Create New Mobile Phone', new_mobile_phone_path %>
+<%= link_to 'Create New Mobile Phone', new_mobile_phone_path, :class => 'btn btn-large btn-success' %>

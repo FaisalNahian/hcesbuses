@@ -1,5 +1,7 @@
 <h2>Resend confirmation instructions</h2>
 
+<p>To try to avoid spam, we require that you confirm your account before you use it. This is so people don't sign up with your email address and start doing weird things. If, for some reason, you haven't seen your confirmation email, you can use this link to re-send it to you.</p>
+
 <%= form_for(resource, :as => resource_name, :url => confirmation_path(resource_name), :html => { :method => :post }) do |f| %>
   <%= devise_error_messages! %>
 

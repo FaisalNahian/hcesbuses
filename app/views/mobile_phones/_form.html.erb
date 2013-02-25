@@ -13,7 +13,7 @@
   
   <div class="field">
     <%= f.label :carrier, "Choose Your Phone Carrier" %><br />
-    <%= carrier_select 'mobile_phone[carrier]' %>
+    <%= carrier_select 'mobile_phone[carrier]', 'Choose Your Phone Carrier', @mobile_phone.carrier %>
   </div>
   <div class="field">
     <%= f.label :number, "Your 9-digit phone number (eg., 9195551212)" %><br />
