@@ -11,14 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130225150834) do
+ActiveRecord::Schema.define(:version => 20130225222720) do
 
   create_table "buses", :force => true do |t|
     t.string   "name"
     t.string   "twitter_regex"
-    t.integer  "last_tweet",    :default => 0
-    t.datetime "created_at",                   :null => false
-    t.datetime "updated_at",                   :null => false
+    t.integer  "last_tweet",    :limit => 8, :default => 0
+    t.datetime "created_at",                                :null => false
+    t.datetime "updated_at",                                :null => false
   end
 
   create_table "mobile_phones", :force => true do |t|
