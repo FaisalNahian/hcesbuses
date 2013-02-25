@@ -51,4 +51,5 @@ gem 'mysql', '2.8.1'
 group :development do
   gem 'crack'
   gem 'awesome_print'
+  gem 'lol_dba'
 end
