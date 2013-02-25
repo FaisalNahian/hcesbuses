@@ -20,9 +20,9 @@
       <td><%= tracker.bus %></td>
       <td><%= tracker.track %></td>
       <td><%= yes_no(tracker.active) %></td>
-      <td><%= link_to 'Details', tracker %>
-        <%= link_to 'Edit', edit_tracker_path(tracker) %>
-        <%= link_to 'Delete', tracker, method: :delete, data: { confirm: 'Are you sure? You will no longer get alerts for this bus.' } %></td>
+      <td><%= link_to 'Details', tracker, class: "label label-success" %>
+        <%= link_to 'Edit', edit_tracker_path(tracker), class: "label label-info" %>
+        <%= link_to 'Delete', tracker, method: :delete, data: { confirm: 'Are you sure? You will no longer get alerts for this bus.' }, class: "label label-warning" %></td>
     </tr>
 <% end %>
   </tbody>

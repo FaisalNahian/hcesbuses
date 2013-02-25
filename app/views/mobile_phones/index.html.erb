@@ -15,9 +15,9 @@
       <td><%= mobile_phone.label %></td>
       <td><%= number_to_phone(mobile_phone.number) %></td>
       <td><%= SMSFu.carrier_name(mobile_phone.carrier) %></td>
-      <td><%= link_to 'Details', mobile_phone %>
-      <%= link_to 'Edit', edit_mobile_phone_path(mobile_phone) %>
-      <%= link_to 'Delete', mobile_phone, method: :delete, data: { confirm: "Are you sure? You won't get any more texts to this phone." } %></td>
+      <td><%= link_to 'Details', mobile_phone, :class => "label label-success" %>
+      <%= link_to 'Edit', edit_mobile_phone_path(mobile_phone), :class => "label label-info" %>
+      <%= link_to 'Delete', mobile_phone, method: :delete, data: { confirm: "Are you sure? You won't get any more texts to this phone." }, class: "label label-warning" %></td>
     </tr>
 <% end %>
   </tbody>
