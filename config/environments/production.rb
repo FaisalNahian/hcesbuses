@@ -67,10 +67,11 @@ Hcesbuses::Application.configure do
   
   config.middleware.use ExceptionNotifier,
     :email_prefix => "[HCES Buses] ",
-    :sender_address => %{minter@lunenburg.org},
+    :sender_address => %{info@hcesbuses.com},
     :exception_recipients => %w{minter@lunenburg.org}
     
   config.action_mailer.default_url_options = { :host => 'hcesbuses.com' }
+  config.mailer_sender = “info@hcesbuses.com”
   
   
 end
