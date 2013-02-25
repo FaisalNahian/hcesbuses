@@ -9,4 +9,8 @@ class ApplicationController < ActionController::Base
     pages_index_url
   end
   
+  def after_confirmation_path_for(user)
+    trackers_url
+  end
+  
 end
