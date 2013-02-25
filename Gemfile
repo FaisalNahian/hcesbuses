@@ -46,7 +46,7 @@ gem 'sms_fu', :git => "git://github.com/teamsnap/sms-fu.git", :branch => "rails3
 gem 'pony'
 gem 'twitter'
 gem 'exception_notification'
-gem 'mysql'
+gem 'mysql', '2.8.1'
 
 group :development do
   gem 'crack'
