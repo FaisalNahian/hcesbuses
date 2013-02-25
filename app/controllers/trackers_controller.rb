@@ -92,7 +92,7 @@ class TrackersController < ApplicationController
   def check_for_mobile_phone
     if current_user.mobile_phones.empty?
       flash[:notice] = "You can't track any buses without a cell phone - go ahead and enter one now!"
-      redirect_to new_mobile_phones_path and return
+      redirect_to new_mobile_phone_path and return
     end
   end
 end
