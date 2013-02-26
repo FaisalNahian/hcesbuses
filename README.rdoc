@@ -25,16 +25,11 @@ The application has four main ActiveRecord models:
 
 1. User - managed by Devise, handles the user authentication piece.
 
-2. Bus - Representing a bus, it has the bus name (for display purposes), a Regexp
-to match the bus in a given tweet, and a marker for the last tweet we've seen that
-mentions the bus.
+2. Bus - Representing a bus, it has the bus name (for display purposes), a Regexp to match the bus in a given tweet, and a marker for the last tweet we've seen that mentions the bus.
 
-3. Tracker - Attached to a user and a bus, this model is used to determine who is 
-watching for a particular bus, which track they're on, and if the tracker is
-currently active.
+3. Tracker - Attached to a user and a bus, this model is used to determine who is watching for a particular bus, which track they're on, and if the tracker is currently active.
 
-4. Mobile Phone - attached to a User, this uses sms-fu to generate an email-to-SMS
-to a given number on a given cell carrier.
+4. Mobile Phone - attached to a User, this uses sms-fu to generate an email-to-SMS to a given number on a given cell carrier.
 
 There is also a simple Track model (representing the school schedule), and a
 TwitterTracker model (used via cron to search the Twitter feed).
