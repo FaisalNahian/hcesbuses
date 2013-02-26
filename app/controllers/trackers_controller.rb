@@ -17,7 +17,7 @@ class TrackersController < ApplicationController
   # GET /trackers/1
   # GET /trackers/1.json
   def show
-    @tracker = Tracker.find(params[:id])
+    @tracker = Tracker.where(:user_id => current_user.id).find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -28,7 +28,7 @@ class TrackersController < ApplicationController
   # GET /trackers/new
   # GET /trackers/new.json
   def new
-    @tracker = Tracker.new(:active => true)
+    @tracker = Tracker.new(:active => true, :user_id => current_user.id)
 
     respond_to do |format|
       format.html # new.html.erb
@@ -78,7 +78,7 @@ class TrackersController < ApplicationController
   # DELETE /trackers/1
   # DELETE /trackers/1.json
   def destroy
-    @tracker = Tracker.find(params[:id])
+    @tracker = Tracker.where(:user_id => current_user.id).find(params[:id])
     @tracker.destroy
 
     respond_to do |format|
