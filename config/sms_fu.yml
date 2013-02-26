@@ -1,5 +1,5 @@
 config:
-  from_address: minter@lunenburg.org
+  from_address: info@hcesbuses.com
   
 carriers:
   alltel:
