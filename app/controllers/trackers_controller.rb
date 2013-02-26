@@ -6,7 +6,7 @@ class TrackersController < ApplicationController
   # GET /trackers
   # GET /trackers.json
   def index
-    @trackers = Tracker.all
+    @trackers = Tracker.where(:user_id => current_user.id).all
 
     respond_to do |format|
       format.html # index.html.erb
