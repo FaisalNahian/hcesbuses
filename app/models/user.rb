@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me
   attr_accessible :provider, :uid
   # attr_accessible :title, :body
+  attr_protected :is_admin
   
   has_many :trackers, :dependent => :destroy
   has_many :mobile_phones, :dependent => :destroy
