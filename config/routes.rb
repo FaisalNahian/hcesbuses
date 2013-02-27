@@ -6,6 +6,10 @@ Hcesbuses::Application.routes.draw do
   match 'pages/contact' => 'pages#contact'
   match 'pages/faq' => 'pages#faq'
   
+  namespace :admin do
+    resources :users, :except => [:new, :create]
+  end
+  
   devise_for :users
 
   # The priority is based upon order of creation:

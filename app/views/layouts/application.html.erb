@@ -42,6 +42,9 @@
               <% if user_signed_in? %>
                 <li><%= link_to "Your Cell Phones", mobile_phones_path %></li>
                 <li><%= link_to "Your Buses", trackers_path %></li>
+                <% if current_user.is_admin? %>
+                  <li><%= link_to "User Admin", admin_users_path %></li>
+                <% end %>
               <% end %>
               <li><%= link_to "FAQ", pages_faq_path %></li>
               <li><%= link_to "Contact", pages_contact_path %></li>
@@ -59,15 +62,15 @@
                 </li>
               
               <% else %>
-              <li class="divider-vertical"></li>
-              <li>
-                <%= form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {:class => 'navbar-form form-inline pull-right'}) do |f| %>
-                  <%= f.email_field :email, :autofocus => true, :placeholder => "Email Address" %>
-                  <%= f.password_field :password, :placeholder => "Password" %>
-                  <%= f.hidden_field :remember_me, :value => 1 %>
-                  <%= f.submit "Log In", :class => 'btn' %>
-                <% end %>
-              </li>
+                <li class="divider-vertical"></li>
+                <li>
+                  <%= form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {:class => 'navbar-form form-inline pull-right'}) do |f| %>
+                    <%= f.email_field :email, :autofocus => true, :placeholder => "Email Address" %>
+                    <%= f.password_field :password, :placeholder => "Password" %>
+                    <%= f.hidden_field :remember_me, :value => 1 %>
+                    <%= f.submit "Log In", :class => 'btn' %>
+                  <% end %>
+                </li>
               <% end %>
               </li>
             </ul>

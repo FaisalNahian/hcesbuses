@@ -1,0 +1,27 @@
+<h1>Listing All Users</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Email</th>
+      <th>Confirmed?</th>
+      <th>Last Login At</th>
+      <th>Last Login IP</th>
+      <th>Trackers</th>
+      <th>Phones</th>
+    </tr>
+  </thead>
+  
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.email %></td>
+        <td><%= user.confirmed_at.nil? ? "No" : "Yes" %></td>
+        <td><%= user.last_sign_in_at %></td>
+        <td><%= user.last_sign_in_ip %></td>
+        <td><%= user.trackers.count %></td>
+        <td><%= user.mobile_phones.count %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
