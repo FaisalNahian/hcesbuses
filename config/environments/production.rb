@@ -44,6 +44,8 @@ Hcesbuses::Application.configure do
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server
   # config.action_controller.asset_host = "http://assets.example.com"
+  config.action_controller.asset_host = "http://64c0e688e47fd10f63a2-3b65475d878d7845b1488fd9f2acd8f0.r68.cf1.rackcdn.com"
+  
 
   # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
   # config.assets.precompile += %w( search.js )
