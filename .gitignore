@@ -16,4 +16,4 @@
 
 config/database.yml
 config/twitter.yml
-
+config/asset_sync.yml

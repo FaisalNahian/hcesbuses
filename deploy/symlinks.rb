@@ -1,6 +1,7 @@
 set :normal_symlinks, %w(
   database.yml
   twitter.yml
+  asset_sync.yml
 )
 
 namespace :make_symlinks do
