@@ -28,7 +28,7 @@ class Track
     
     tracks.each do |track_id, dates|
       dates.each do |start_date, end_date|
-        in_now.push(track_id) if today.between?(Time.parse(start_date), Time.parse(end_date))
+        in_now.push(track_id) if today.between?(Time.parse(start_date).beginning_of_day, Time.parse(end_date).end_of_day)
       end
     end
     in_now
