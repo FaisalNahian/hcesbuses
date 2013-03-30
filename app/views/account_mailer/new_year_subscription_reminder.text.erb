@@ -6,13 +6,13 @@ However, we know that some of you may no longer need these notifications. Maybe 
 
 That's why we're sending you this reminder - here is a list of the bus (or buses) that you're watching as of right now:
 
-<%= @user.trackers.each do |tracker| %>
-* <%= tracker.bus %> - Track <%= tracker.track %> <%= "(Inactive") unless tracker.active %>
+<% @user.trackers.each do |tracker| %>
+* <%= tracker.bus %> - Track <%= tracker.track %> <%= "(Inactive)" unless tracker.active? %>
 <% end %>
 
 The cell phone number(s) that you have configured in our system are:
 
-<%= @user.mobile_phones.each do |phone| %>
+<% @user.mobile_phones.each do |phone| %>
 * <%= number_to_phone(phone.number) %> on <%= SMSFu.carrier_name(phone.carrier) %>
 <% end %>
 
