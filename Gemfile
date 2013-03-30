@@ -49,6 +49,7 @@ gem 'mysql2', '0.3.11'
 gem 'sidekiq'
 gem 'slim'
 gem 'sinatra', '>= 1.3.0', :require => nil
+gem "devise-async"
 
 group :development do
   gem 'crack'
