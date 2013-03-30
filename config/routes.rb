@@ -11,6 +11,13 @@ Hcesbuses::Application.routes.draw do
   end
   
   devise_for :users
+  
+  require 'sidekiq/web'
+  constraint = lambda { |request| request.env["warden"].authenticate? and request.env['warden'].user.is_admin? }
+  constraints constraint do
+    mount Sidekiq::Web => '/sidekiq'
+  end
+  
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

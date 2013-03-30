@@ -46,6 +46,9 @@ gem 'pony'
 gem 'twitter'
 gem 'exception_notification'
 gem 'mysql2', '0.3.11'
+gem 'sidekiq'
+gem 'slim'
+gem 'sinatra', '>= 1.3.0', :require => nil
 
 group :development do
   gem 'crack'
