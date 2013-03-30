@@ -1,0 +1,28 @@
+Hello,
+
+It's a new school year at Harris Creek Elementary School! That's why we're sending out this automated reminder to all HCESBuses.com users. The new year-round schedule is in our system, ready to go to keep you up to date on when the buses leave in the afternoon.
+
+However, we know that some of you may no longer need these notifications. Maybe your child has moved on to middle school, maybe you've moved to a different school. Some may have changed tracks. Others may not have been to our website in a while, and just need a reminder about what bus you're watching.
+
+That's why we're sending you this reminder - here is a list of the bus (or buses) that you're watching as of right now:
+
+<%= @user.trackers.each do |tracker| %>
+* <%= tracker.bus %> - Track <%= tracker.track %> <%= "(Inactive") unless tracker.active %>
+<% end %>
+
+The cell phone number(s) that you have configured in our system are:
+
+<%= @user.mobile_phones.each do |phone| %>
+* <%= number_to_phone(phone.number) %> on <%= SMSFu.carrier_name(phone.carrier) %>
+<% end %>
+
+If that's all still correct, you're set! Nothing at all to change!
+
+If you need to update your information, or want to delete your account, visit http://hcesbuses.com/, log in, and update what's needed. For account deletions, go under "Your Account", choose "Edit/Delete Account", and click the big orange "Remove My Account" button.
+
+And if you have any questions, just reply to this email and I'll be glad to help.
+
+Thanks,
+
+H. Wade Minter
+HCESBuses.com
