@@ -40,14 +40,12 @@ gem 'capistrano'
 
 gem 'devise'
 gem 'omniauth'
-gem 'omniauth-facebook'
-gem 'omniauth-twitter'
 gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 gem 'sms_fu', :git => "git://github.com/teamsnap/sms-fu.git", :branch => "rails3.1"
 gem 'pony'
 gem 'twitter'
 gem 'exception_notification'
-gem 'mysql', '2.8.1'
+gem 'mysql2', '0.3.11'
 
 group :development do
   gem 'crack'
