@@ -1,4 +1,5 @@
 require 'bundler/capistrano'
+require 'sidekiq/capistrano'
 
 load 'deploy/settings'
 load 'deploy/bundler'
