@@ -1,5 +1,6 @@
 class AccountMailer < ActionMailer::Base
   default from: "info@hcesbuses.com"
+  layout 'account_mailer'
   
   def unfinished_registration_reminder(user_id)
     @user = User.find(user_id)
