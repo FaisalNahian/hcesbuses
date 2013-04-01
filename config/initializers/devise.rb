@@ -245,4 +245,4 @@ Devise::Async.backend = :sidekiq
 Devise::Mailer.layout "account_mailer" # email.haml or email.erb
 
 # config/initializers/devise_async.rb
-Devise::Async.queue = :normal
+Devise::Async.queue = :default
