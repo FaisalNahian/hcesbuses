@@ -240,4 +240,7 @@ Devise.setup do |config|
 
   Devise::Async.backend = :sidekiq
 
+  Devise::Mailer.layout "account_mailer" # email.haml or email.erb
+
+
 end
