@@ -238,9 +238,11 @@ Devise.setup do |config|
   # so you need to do it manually. For the users scope, it would be:
   # config.omniauth_path_prefix = "/my_engine/users/auth"
 
-  Devise::Async.backend = :sidekiq
-
-  Devise::Mailer.layout "account_mailer" # email.haml or email.erb
-
-
 end
+
+Devise::Async.backend = :sidekiq
+
+Devise::Mailer.layout "account_mailer" # email.haml or email.erb
+
+# config/initializers/devise_async.rb
+Devise::Async.queue = :normal
