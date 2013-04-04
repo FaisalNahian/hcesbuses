@@ -1,7 +1,11 @@
 class TwitterMonitor
   
   def self.tweets_since(tweet_id)
-    Twitter.user_timeline('hcesbuses', :since_id => tweet_id, :count => 100).reverse
+    begin
+      Twitter.user_timeline('hcesbuses', :since_id => tweet_id, :count => 100).reverse
+    rescue Twitter::Error::ClientError
+      nil
+    end
   end
   
   def self.process_new_tweets_since(tweet_id)
