@@ -3,8 +3,8 @@ class TwitterMonitor
   def self.tweets_since(tweet_id)
     begin
       Twitter.user_timeline('hcesbuses', :since_id => tweet_id, :count => 100).reverse
-    rescue Twitter::Error::ClientError
-      nil
+    rescue Twitter::Error::ClientError => e
+      Rails.logger.warn "TWITTER ERROR: #{e}\n"
     end
   end
   
