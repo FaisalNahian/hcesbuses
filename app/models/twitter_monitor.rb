@@ -1,11 +1,7 @@
 class TwitterMonitor
   
   def self.tweets_since(tweet_id)
-    begin
-      Twitter.user_timeline('hcesbuses', :since_id => tweet_id, :count => 100).reverse
-    rescue Twitter::Error::ClientError => e
-      Rails.logger.warn "TWITTER ERROR: #{e}\n"
-    end
+    Twitter.user_timeline('hcesbuses', :since_id => tweet_id, :count => 100).reverse
   end
   
   def self.process_new_tweets_since(tweet_id)
@@ -33,7 +29,11 @@ class TwitterMonitor
   def self.run_notification
     last_tweet = Bus.maximum(:last_tweet)
     # last_tweet = 304705110607556608
-    TwitterMonitor.process_new_tweets_since(last_tweet)
+    begin
+      TwitterMonitor.process_new_tweets_since(last_tweet)
+    rescue Twitter::Error::ClientError => e
+      Rails.logger.warn "TWITTER ERROR: #{e}\n"
+    end
   end
     
 end
